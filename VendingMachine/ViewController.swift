@@ -167,6 +167,10 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         reset()
     }
     
+    @IBAction func depositFunds() {
+        vendingMachine.deposit(5.0)
+        updateBalanceLabel()
+    }
     
     // MARK: - Helper Methods
 }

@@ -46,6 +46,10 @@
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                                 <color key="tintColor" red="0.96862745100000003" green="0.80000000000000004" blue="0.34901960780000002" alpha="1" colorSpace="calibratedRGB"/>
                                                 <state key="normal" title="Add $5"/>
+                                                <connections>
+                                                    <action selector="depositFunds" destination="BYZ-38-t0r" eventType="touchUpInside" id="rxX-CP-3lF"/>
+                                                    <segue destination="PI5-yI-WrN" kind="presentation" id="Ow0-8u-JNR"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -182,6 +186,51 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1020" y="657"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="eLl-N6-2QR">
+            <objects>
+                <viewController id="PI5-yI-WrN" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="xfd-dv-Q5X"/>
+                        <viewControllerLayoutGuide type="bottom" id="Zfk-5m-79b"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="en4-Nx-9rI">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BHY-it-7ng">
+                                <rect key="frame" x="0.0" y="544" width="600" height="56"/>
+                                <color key="backgroundColor" red="0.20000000000000001" green="0.80000000000000004" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="56" id="HoD-u1-v0S"/>
+                                </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" title="Purchase"/>
+                                <connections>
+                                    <action selector="purchase" destination="BYZ-38-t0r" eventType="touchUpInside" id="vCf-Lw-I9C"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Funds successfully Added" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bsm-3T-TSH">
+                                <rect key="frame" x="200" y="289" width="201" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.1176470588" green="0.14117647059999999" blue="0.15686274510000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="Bsm-3T-TSH" firstAttribute="centerX" secondItem="en4-Nx-9rI" secondAttribute="centerX" id="L36-EB-pqh"/>
+                            <constraint firstItem="Bsm-3T-TSH" firstAttribute="centerY" secondItem="en4-Nx-9rI" secondAttribute="centerY" id="T6u-GB-7hB"/>
+                            <constraint firstItem="Zfk-5m-79b" firstAttribute="top" secondItem="BHY-it-7ng" secondAttribute="bottom" id="fgj-7F-yGi"/>
+                            <constraint firstItem="BHY-it-7ng" firstAttribute="leading" secondItem="en4-Nx-9rI" secondAttribute="leading" id="tkC-b0-vO4"/>
+                            <constraint firstAttribute="trailing" secondItem="BHY-it-7ng" secondAttribute="trailing" id="uyu-LT-CiC"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dCT-K0-j2n" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1701" y="657"/>
         </scene>
     </scenes>
     <resources>
