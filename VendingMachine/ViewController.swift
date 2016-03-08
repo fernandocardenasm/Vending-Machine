@@ -19,6 +19,8 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     @IBOutlet weak var quantityLabel: UILabel!
     
     let vendingMachine: VendingMachineType
+    var currentSelection: VendingSelection?
+    var quantity: Double = 1.0
     
     required init?(coder aDecoder: NSCoder) {
         do {
@@ -73,6 +75,10 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         updateCellBackgroundColor(indexPath, selected: true)
         
+        //When the user taps in an item
+        currentSelection = vendingMachine.selection[indexPath.row]
+        
+        
     }
     
     func collectionView(collectionView: UICollectionView, didDeselectItemAtIndexPath indexPath: NSIndexPath) {
@@ -90,6 +96,21 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     func updateCellBackgroundColor(indexPath: NSIndexPath, selected: Bool) {
         if let cell = collectionView.cellForItemAtIndexPath(indexPath) {
             cell.contentView.backgroundColor = selected ? UIColor(red: 41/255.0, green: 211/255.0, blue: 241/255.0, alpha: 1.0) : UIColor.clearColor()
+        }
+    }
+    
+    
+    @IBAction func purchase() {
+        if let currentSelection = currentSelection {
+            do {
+                try vendingMachine.vend(currentSelection, quantity: quantity)
+            }
+            catch{
+                
+            }
+        }
+        else {
+            
         }
     }
     
