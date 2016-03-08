@@ -17,6 +17,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     @IBOutlet weak var totalLabel: UILabel!
     @IBOutlet weak var balanceLabel: UILabel!
     @IBOutlet weak var quantityLabel: UILabel!
+    @IBOutlet weak var stepperQuantity: UIStepper!
     
     let vendingMachine: VendingMachineType
     var currentSelection: VendingSelection?
@@ -32,6 +33,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
             fatalError("\(error)")
         }
         super.init(coder: aDecoder)
+        
     }
     
     override func viewDidLoad() {
@@ -152,6 +154,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     }
     func reset() {
         quantity = 1
+        stepperQuantity.value = 1
         updateTotalPriceLabel()
         updateQuantityLabel()
     }
