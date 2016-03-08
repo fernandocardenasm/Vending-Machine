@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 // Protocols
 
@@ -82,6 +83,15 @@ enum VendingSelection: String {
     case FruitJuice
     case SportsDrink
     case Gum
+    
+    func icon() -> UIImage {
+        if let image = UIImage(named: self.rawValue){
+            return image
+        }
+        else{
+            return UIImage(named: "Default")!
+        }
+    }
 }
 
 struct VendingItem: ItemType {
